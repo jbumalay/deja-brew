@@ -18,7 +18,7 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; overflow-x: hidden; }
   body {
     background: var(--paper);
     color: var(--espresso);
@@ -35,7 +35,7 @@
   :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
 }
 
-.shell { width: var(--shell); margin-inline: auto; }
+.shell { max-width: 100%; width: var(--shell); margin-inline: auto; }
 .section { padding-block: clamp(96px, 11vw, 176px); }
 .section:not(.is-visible) { opacity: 0.01; transform: translateY(18px); }
 .section { opacity: 1; transform: none; transition: opacity 700ms ease, transform 700ms ease; }
@@ -377,9 +377,9 @@ em { font-weight: 400; }
   .hero__actions .button { width: fit-content; }
   .hero__actions .text-link { width: fit-content; }
   .hero__note span:last-child { display: none; }
-  .hero__visual { width: 94%; }
+  .hero__visual { width: 94%; margin-right: 0; }
   .hero__visual figure { height: 480px; }
-  .stamp { height: 120px; right: -28px; width: 120px; }
+  .stamp { height: 120px; right: 0; width: 120px; }
   .stamp text { font-size: 9.6px; }
   .section-heading { align-items: start; display: block; margin-bottom: 48px; }
   .section-heading h2, .story h2, .experience h2, .visit h2, .newsletter h2 { font-size: clamp(48px, 14vw, 68px); }
