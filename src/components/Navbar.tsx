@@ -32,8 +32,42 @@ export function Navbar() {
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", open);
-    return () => document.body.classList.remove("menu-open");
+    document.documentElement.classList.toggle("menu-open", open);
+    if (open) {
+      const scrollY = window.scrollY;
+      document.body.dataset.scrollY = String(scrollY);
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    } else {
+      const wasLocked = document.body.dataset.scrollY !== undefined;
+      const scrollY = Number(document.body.dataset.scrollY || "0");
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (wasLocked) {
+        delete document.body.dataset.scrollY;
+        window.scrollTo(0, scrollY);
+      }
+    }
   }, [open]);
+
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
+      const scrollY = Number(document.body.dataset.scrollY || "0");
+      const wasLocked = document.body.dataset.scrollY !== undefined;
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      delete document.body.dataset.scrollY;
+      if (wasLocked) window.scrollTo(0, scrollY);
+    };
+  }, []);
 
   return (
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
