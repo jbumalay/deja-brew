@@ -312,12 +312,18 @@ em { font-weight: 400; }
 
 @media (max-width: 820px) {
   :root { --shell: calc(100% - 40px); }
+  .site-header {
+    background: rgba(243, 233, 216, 0.96);
+    box-shadow: 0 1px 0 var(--line);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
   .section { padding-block: 96px; }
   .nav { grid-template-columns: 1fr auto; }
   .nav__links, .nav__cta { display: none; }
   .menu-toggle { display: block; }
   .mobile-menu {
-    background: var(--espresso);
+    background: rgba(36, 23, 19, 0.98);
     color: var(--paper);
     display: block;
     height: calc(100vh - 66px);
