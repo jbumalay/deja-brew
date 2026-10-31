@@ -63,49 +63,42 @@ The app runs on `http://localhost:8443` by default.
 
 ```text
 .
+├── .gitattributes
+├── .gitignore
+├── .mise.toml
 ├── LICENSE
 ├── README.md
-├── README-FORMAT.md
 ├── index.html
+├── package-lock.json
 ├── package.json
 ├── pnpm-lock.yaml
 ├── tsconfig.json
 ├── vite.config.ts
 ├── public/
 │   └── favicon.svg
-├── screenshots/
-│   ├── 01-hero.png
-│   ├── 02-menu.png
-│   ├── 03-story.png
-│   ├── 04-manifesto.png
-│   ├── 05-experience.png
-│   ├── 06-location.png
-│   ├── 07-newsletter.png
-│   ├── 08-footer.png
-│   ├── 09-full-page.png
-│   └── 10-mobile-hero.png
-├── src/
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   ├── components/
-│   │   ├── CafeExperience.tsx
-│   │   ├── Footer.tsx
-│   │   ├── Hero.tsx
-│   │   ├── Location.tsx
-│   │   ├── Manifesto.tsx
-│   │   ├── MemoryStamp.tsx
-│   │   ├── Navbar.tsx
-│   │   ├── Newsletter.tsx
-│   │   ├── SignatureMenu.tsx
-│   │   ├── Story.tsx
-│   │   └── MapIllustration.tsx
-│   └── data/
-│       ├── highlights.ts
-│       ├── menu.ts
-│       ├── nav.ts
-│       ├── photos.ts
-│       └── place.ts
+└── src/
+    ├── App.tsx
+    ├── main.tsx
+    ├── index.css
+    ├── vite-env.d.ts
+    ├── components/
+    │   ├── CafeExperience.tsx
+    │   ├── Footer.tsx
+    │   ├── Hero.tsx
+    │   ├── Location.tsx
+    │   ├── Manifesto.tsx
+    │   ├── MapIllustration.tsx
+    │   ├── MemoryStamp.tsx
+    │   ├── Navbar.tsx
+    │   ├── Newsletter.tsx
+    │   ├── SignatureMenu.tsx
+    │   └── Story.tsx
+    └── data/
+        ├── highlights.ts
+        ├── menu.ts
+        ├── nav.ts
+        ├── photos.ts
+        └── place.ts
 ```
 
 ## Design direction
